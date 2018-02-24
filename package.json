@@ -13,7 +13,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "electron": "^1.7.10"
+    "electron": "^1.8.2"
   },
   "devDependencies": {
     "electron-packager": "^11.0.1"
