@@ -1,9 +1,7 @@
 // NODE CLASSE //
 
 class mapNode {
-  constructor(/*x, y, name*/params, name) {
-    // this.x = x;
-    // this.y = y;
+  constructor(params, name) {
     this.x = params.x;
     this.y = params.y;
     this.tx = params.text.x; // text pos
@@ -35,19 +33,23 @@ class mapNode {
     layer.strokeStyle("black");
     layer.strokeCircle(this.x, this.y, 30);
 
-    // text
+    // text gfx
     layer.save();
     layer.a(this.fxA);
     layer.font('32px Arial');
     layer.fillStyle('black');
     layer.textAlign('center');
+    layer.save();
+    layer.context.filter = "blur(" + this.fxW + "px)";
+    layer.fillText(this.name, this.tx, this.ty);
+    layer.restore();
+    // text
     layer.fillText(this.name, this.tx, this.ty);
     layer.restore();
   }
 
   // fade in effect
   spoted(app) {
-    // old red #D9535E
     var t = app.tween(this).to({color: "black", fxW: 5, fxA: 1}, 0.155);
   }
 

@@ -37,12 +37,12 @@ class Button {
   }
 
   unSpoted(app) {
-    var t = app.tween(this).to({color: "grey", fxW: 1, fxA: 0.0}, 0.155);
+    var t = app.tween(this).to({color: "grey", fxW: 0, fxA: 0.0}, 0.155);
   }
 
   render(layer) {
     //gfx
-    layer.save();
+    /*layer.save();
     layer.a(this.fxA);
     layer.context.filter = "blur(" + this.fxW + "px)";
     layer.lineWidth(8);
@@ -54,12 +54,21 @@ class Button {
     layer.strokeStyle('black');
     layer.lineWidth(3);
     layer.fillRect(this.x, this.y, this.w, this.h);
-    layer.strokeRect(this.x, this.y, this.w, this.h);
+    layer.strokeRect(this.x, this.y, this.w, this.h);*/
     // text
+    layer.save();
     layer.font('32px Arial');
     layer.textAlign('center');
     layer.fillStyle('black');
+    layer.save();
+    layer.a(this.fxA);
+    layer.context.filter = "blur(" + this.fxW + "px)";
     layer.fillText(this.label, this.x + this.w/2, this.y + 32 + (this.h - 32)/2);
+    layer.restore();
+    layer.fillText(this.label, this.x + this.w/2, this.y + 32 + (this.h - 32)/2);
+    layer.align(0.5);
+    if(this.fxW > 0) layer.fillRect(this.x + this.w/2, this.y + this.h + 10, this.fxW*30, 2);
+    layer.restore();
   }
 }
 
