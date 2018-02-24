@@ -40,7 +40,8 @@ class mapNode {
     layer.a(this.fxA);
     layer.font('32px Arial');
     layer.fillStyle('black');
-    layer.fillText(this.name, this.tx, this.y - 30);
+    layer.textAlign('center');
+    layer.fillText(this.name, this.tx, this.ty);
     layer.restore();
   }
 
