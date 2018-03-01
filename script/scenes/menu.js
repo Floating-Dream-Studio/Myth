@@ -41,20 +41,6 @@ class Button {
   }
 
   render(layer) {
-    //gfx
-    /*layer.save();
-    layer.a(this.fxA);
-    layer.context.filter = "blur(" + this.fxW + "px)";
-    layer.lineWidth(8);
-    layer.strokeStyle(this.color);
-    layer.strokeRect(this.x, this.y, this.w, this.h);
-    layer.restore();
-    // button
-    layer.fillStyle(this.bcolor);
-    layer.strokeStyle('black');
-    layer.lineWidth(3);
-    layer.fillRect(this.x, this.y, this.w, this.h);
-    layer.strokeRect(this.x, this.y, this.w, this.h);*/
     // text
     layer.save();
     layer.font('32px Arial');
@@ -139,6 +125,7 @@ ENGINE.menu = {
 
   render: function() {
     this.app.layer.clear('#333');
+    this.app.layer.drawImage(this.app.images["bois3"], 0, 0);
     this.renderButtons();
   }
 }

@@ -8,12 +8,12 @@ var app = playground({
 
   create: function() {
     this.loadImages(
-      "CARD_TEST_2",
       "CARD_TEST_3",
       "MAP1",
-      "bois"
+      "bois2",
+      "bois3"
     );
-    this.loadData("testData", "map");
+    this.loadData("map");
   },
 
   // keydown: function(e) {
