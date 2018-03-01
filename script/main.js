@@ -10,7 +10,8 @@ var app = playground({
     this.loadImages(
       "CARD_TEST_2",
       "CARD_TEST_3",
-      "MAP1"
+      "MAP1",
+      "bois"
     );
     this.loadData("testData", "map");
   },

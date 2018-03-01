@@ -112,6 +112,7 @@ ENGINE.start_map = {
 
   render: function() {
     this.app.layer.clear("#333");
+    this.app.layer.drawImage(this.app.images['bois'], 0, 0);
     this.app.layer.drawImage(this.app.images['MAP1'], 0, 0);
     this.renderMap();
   }
