@@ -13,7 +13,7 @@ var app = playground({
       "bois2",
       "bois3"
     );
-    this.loadData("map");
+    this.loadData("map", "player");
   },
 
   // keydown: function(e) {
